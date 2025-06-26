@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: latest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: latest
+  template:
+    metadata:
+      labels:
+        app: latest 
+    spec:
+      containers:
+        - name: latest 
+          image: golangregistrybizzaroerik.azurecr.io/latest
+          ports:
+          - containerPort: 8080
